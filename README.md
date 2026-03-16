@@ -1,14 +1,14 @@
-![Portfolio Preview](https://github.com/Abhiz2411/3D-interactive-portfolio/blob/main/public/assets/seo/og-image.png?raw=true)
+![Portfolio Preview](https://github.com/abhinandanjain001/AJ-PORTFOLIO/blob/main/public/assets/seo/og-image.png?raw=true)
 
 # 🚀 My Portfolio Website
 
 Welcome to the repository for my personal portfolio website! 🎉 This project is a culmination of creativity, technology, and my dedication to showcasing my skills, projects, and personality in a visually stunning and interactive manner.
 
-### Live preview: https://www.abhijitzende.com/
 
-![Preview](https://github.com/Abhiz2411/3D-interactive-portfolio/blob/main/public/assets/preview_video.gif?raw=true)
 
-https://github.com/Abhiz2411/3D-interactive-portfolio/blob/main/preview_video.mp4
+![Preview](https://github.com/abhinandanjain001/AJ-PORTFOLIO/blob/main/public/assets/preview_video.gif?raw=true)
+
+https://github.com/abhinandanjain001/AJ-PORTFOLIO/blob/main/preview_video.mp4
 
 This project is **inspired** by the amazing work of [Naresh Khatri](https://github.com/Naresh-Khatri/Portfolio). His innovative approach to web design and attention to detail has been a huge influence. Thank you, Naresh! 🙏
 
@@ -49,12 +49,12 @@ The portfolio website is built using the following tools and technologies:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/Abhiz2411/3D-interactive-portfolio.git
+   git clone https://github.com/abhinandanjain001/AJ-PORTFOLIO.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd 3D-interactive-portfolio
+   cd AJ-PORTFOLIO
    ```
 
 3. Install dependencies:
@@ -83,7 +83,7 @@ The portfolio website is built using the following tools and technologies:
 
 ## 🚀 Deployment
 
-This project is deployed using **Vercel** for its blazing-fast performance and ease of use. You can view the live site [here](https://www.abhijitzende.com/).
+This project is deployed using **Vercel** for its blazing-fast performance and ease of use.
 
 ### Setting up Resend API on Vercel
 
