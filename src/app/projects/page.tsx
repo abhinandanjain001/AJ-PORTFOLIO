@@ -11,6 +11,19 @@ import "@splidejs/react-splide/css";
 const PROJECTS = [
   {
     id: 1,
+    name: "Disaster Management (EduSafe 360) 🌐",
+    description: `AR/VR-based disaster training with real-time alerts, location tracking, and safe-zone mapping.`,
+    link: "https://edu-safe-360.vercel.app/",
+    images: [
+      "/assets/projects-screenshots/disaster-management/1.png",
+      "/assets/projects-screenshots/disaster-management/2.png",
+      "/assets/projects-screenshots/disaster-management/3.png",
+      "/assets/projects-screenshots/disaster-management/4.png",
+      "/assets/projects-screenshots/disaster-management/5.png"
+    ],
+  },
+  {
+    id: 2,
     name: "AI Blog Companion 🧠",
     description: `An AI-powered blog generator that writes posts and creates matching images automatically. Streamlit + OpenAI API tool for SEO blog generation with prompt control and export support.`,
     link: "https://ai-blog-companion-bxvdnpucqsknnmfoxdrku5.streamlit.app/",
@@ -19,7 +32,16 @@ const PROJECTS = [
     ],
   },
   {
-    id: 2,
+    id: 3,
+    name: "AI-Powered Wedding Management 💍",
+    description: `React + Node.js + MongoDB platform with vendor booking, budgeting, and AR/VR venue simulations.`,
+    link: "https://github.com/abhinandanjain001",
+    images: [
+      "/assets/projects-screenshots/ai-wedding/1.png"
+    ],
+  },
+  {
+    id: 4,
     name: "Virtual 3D Store 🛍️",
     description: `AI-based immersive virtual reality store experience built for modern retail.`,
     link: "https://retail-vision-guide.lovable.app",
@@ -31,22 +53,40 @@ const PROJECTS = [
     ],
   },
   {
-    id: 3,
-    name: "Weather App 🌦️",
-    description: `Responsive web app that forecasts weather up to 5 days using live API data.`,
-    link: "https://today-weather-io.vercel.app/",
+    id: 5,
+    name: "Jarvis AI 🤖",
+    description: `An AI assistant that automates everyday tasks and interacts via voice commands.`,
+    link: "https://github.com/abhinandanjain001/jarvis-ai",
     images: [
-      "/assets/projects-screenshots/weather-app/1.png"
+      "/assets/projects-screenshots/jarvis-ai/1.png"
     ],
   },
   {
-    id: 4,
+    id: 6,
     name: "Education Guru 🎓",
     description: `Smart education platform featuring AI-powered tutoring and resources.`,
     link: "https://educationguru.vercel.app/",
     images: [
       "/assets/projects-screenshots/education-guru/1.png",
       "/assets/projects-screenshots/education-guru/2.png"
+    ],
+  },
+  {
+    id: 7,
+    name: "Servizio 24/7 🚗",
+    description: `On-demand household services platform with real-time booking flow and Firebase backend.`,
+    link: "https://github.com/abhinandanjain001",
+    images: [
+      "/assets/projects-screenshots/servizio/1.avif"
+    ],
+  },
+  {
+    id: 8,
+    name: "Weather App 🌦️",
+    description: `Responsive web app that forecasts weather up to 5 days using live API data.`,
+    link: "https://today-weather-io.vercel.app/",
+    images: [
+      "/assets/projects-screenshots/weather-app/1.png"
     ],
   },
 ];

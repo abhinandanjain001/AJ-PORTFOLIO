@@ -306,6 +306,36 @@ export type Project = {
 };
 const projects: Project[] = [
   {
+    id: "disaster-management",
+    category: "AR/VR",
+    title: "Disaster Management (EduSafe 360) 🌐",
+    src: "/assets/projects-screenshots/disaster-management/1.png",
+    screenshots: [
+      "/assets/projects-screenshots/disaster-management/1.png",
+      "/assets/projects-screenshots/disaster-management/2.png",
+      "/assets/projects-screenshots/disaster-management/3.png",
+      "/assets/projects-screenshots/disaster-management/4.png",
+      "/assets/projects-screenshots/disaster-management/5.png"
+    ],
+    live: "https://edu-safe-360.vercel.app/",
+    github: "https://github.com/abhinandanjain001/AJ-PORTFOLIO",
+    skills: {
+      frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.spline],
+      backend: [PROJECT_SKILLS.node],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono">
+            AR/VR-based disaster training with real-time alerts, location tracking, and safe-zone mapping.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <SlideShow images={[this.src]} />
+        </div>
+      );
+    },
+  },
+  {
     id: "ai-blog-companion",
     category: "AI Tool",
     title: "AI Blog Companion 🧠",
@@ -323,6 +353,30 @@ const projects: Project[] = [
           <TypographyP className="font-mono">
             An AI-powered blog generator that writes posts and creates matching images automatically.
             Streamlit + OpenAI API tool for SEO blog generation with prompt control and export support.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <SlideShow images={[this.src]} />
+        </div>
+      );
+    },
+  },
+  {
+    id: "ai-wedding",
+    category: "Full Stack",
+    title: "AI-Powered Wedding Management 💍",
+    src: "/assets/projects-screenshots/ai-wedding/1.png",
+    screenshots: ["/assets/projects-screenshots/ai-wedding/1.png"],
+    live: "https://github.com/abhinandanjain001",
+    github: "https://github.com/abhinandanjain001",
+    skills: {
+      frontend: [PROJECT_SKILLS.react],
+      backend: [PROJECT_SKILLS.node, PROJECT_SKILLS.mongo],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono">
+            React + Node.js + MongoDB platform with vendor booking, budgeting, and AR/VR venue simulations.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
           <SlideShow images={[this.src]} />
@@ -360,22 +414,22 @@ const projects: Project[] = [
     },
   },
   {
-    id: "weather-app",
-    category: "Web App",
-    title: "Weather App 🌦️",
-    src: "/assets/projects-screenshots/weather-app/1.png",
-    screenshots: ["/assets/projects-screenshots/weather-app/1.png"],
-    live: "https://today-weather-io.vercel.app/",
-    github: "https://today-weather-io.vercel.app/",
+    id: "jarvis-ai",
+    category: "AI Assistant",
+    title: "Jarvis AI 🤖",
+    src: "/assets/projects-screenshots/jarvis-ai/1.png",
+    screenshots: ["/assets/projects-screenshots/jarvis-ai/1.png"],
+    live: "https://github.com/abhinandanjain001/jarvis-ai",
+    github: "https://github.com/abhinandanjain001/jarvis-ai",
     skills: {
-      frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.react, PROJECT_SKILLS.tailwind],
+      frontend: [PROJECT_SKILLS.python],
       backend: [],
     },
     get content() {
       return (
         <div>
           <TypographyP className="font-mono">
-            Responsive web app that forecasts weather up to 5 days using live API data.
+            An AI assistant that automates everyday tasks and interacts via voice commands.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
           <SlideShow images={[this.src]} />
@@ -411,84 +465,6 @@ const projects: Project[] = [
     },
   },
   {
-    id: "jarvis-ai",
-    category: "AI Assistant",
-    title: "Jarvis AI 🤖",
-    src: "/assets/projects-screenshots/jarvis-ai/1.png",
-    screenshots: ["/assets/projects-screenshots/jarvis-ai/1.png"],
-    live: "https://github.com/abhinandanjain001/jarvis-ai",
-    github: "https://github.com/abhinandanjain001/jarvis-ai",
-    skills: {
-      frontend: [PROJECT_SKILLS.python],
-      backend: [],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono">
-            An AI assistant that automates everyday tasks and interacts via voice commands.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow images={[this.src]} />
-        </div>
-      );
-    },
-  },
-  {
-    id: "disaster-management",
-    category: "AR/VR",
-    title: "Disaster Management (EduSafe 360) 🌐",
-    src: "/assets/projects-screenshots/disaster-management/1.png",
-    screenshots: [
-      "/assets/projects-screenshots/disaster-management/1.png",
-      "/assets/projects-screenshots/disaster-management/2.png",
-      "/assets/projects-screenshots/disaster-management/3.png",
-      "/assets/projects-screenshots/disaster-management/4.png",
-      "/assets/projects-screenshots/disaster-management/5.png"
-    ],
-    live: "https://edu-safe-360.vercel.app/",
-    github: "https://github.com/abhinandanjain001/AJ-PORTFOLIO",
-    skills: {
-      frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.spline],
-      backend: [PROJECT_SKILLS.node],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono">
-            AR/VR-based disaster training with real-time alerts, location tracking, and safe-zone mapping.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow images={[this.src]} />
-        </div>
-      );
-    },
-  },
-  {
-    id: "ai-wedding",
-    category: "Full Stack",
-    title: "AI-Powered Wedding Management 💍",
-    src: "/assets/projects-screenshots/ai-wedding/1.png",
-    screenshots: ["/assets/projects-screenshots/ai-wedding/1.png"],
-    live: "https://github.com/abhinandanjain001",
-    github: "https://github.com/abhinandanjain001",
-    skills: {
-      frontend: [PROJECT_SKILLS.react],
-      backend: [PROJECT_SKILLS.node, PROJECT_SKILLS.mongo],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono">
-            React + Node.js + MongoDB platform with vendor booking, budgeting, and AR/VR venue simulations.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow images={[this.src]} />
-        </div>
-      );
-    },
-  },
-  {
     id: "servizio",
     category: "Full Stack",
     title: "Servizio 24/7 🚗",
@@ -505,6 +481,30 @@ const projects: Project[] = [
         <div>
           <TypographyP className="font-mono">
             On-demand household services platform with real-time booking flow and Firebase backend.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <SlideShow images={[this.src]} />
+        </div>
+      );
+    },
+  },
+  {
+    id: "weather-app",
+    category: "Web App",
+    title: "Weather App 🌦️",
+    src: "/assets/projects-screenshots/weather-app/1.png",
+    screenshots: ["/assets/projects-screenshots/weather-app/1.png"],
+    live: "https://today-weather-io.vercel.app/",
+    github: "https://today-weather-io.vercel.app/",
+    skills: {
+      frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.react, PROJECT_SKILLS.tailwind],
+      backend: [],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono">
+            Responsive web app that forecasts weather up to 5 days using live API data.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
           <SlideShow images={[this.src]} />
