@@ -11,7 +11,7 @@ import {
 import { usePreloader } from "../preloader";
 import { BlurIn, BoxReveal } from "../reveal-animations";
 import ScrollDownIcon from "../scroll-down-icon";
-import { SiGithub, SiLinkedin } from "react-icons/si";
+import { SiGithub } from "react-icons/si";
 import { config } from "@/data/config";
 
 const HeroSection = () => {
@@ -124,7 +124,7 @@ const HeroSection = () => {
                     target="_blank"
                   >
                     <Button variant={"outline"}>
-                      <SiLinkedin size={24} />
+                      <Linkedin size={24} />
                     </Button>
                   </Link>
                 </div>

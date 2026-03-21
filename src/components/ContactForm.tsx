@@ -1,5 +1,5 @@
 "use client";
-import { Check, ChevronRight, Loader2 } from "lucide-react";
+import { ChevronRight, Loader2 } from "lucide-react";
 import React from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/ace-input";
@@ -8,33 +8,59 @@ import { cn } from "@/lib/utils";
 import { useToast } from "./ui/use-toast";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "@/lib/firebase";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactForm = () => {
   const [fullName, setFullName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [message, setMessage] = React.useState("");
   const [loading, setLoading] = React.useState(false);
+  const [captchaToken, setCaptchaToken] = React.useState<string | null>(null);
+  const recaptchaRef = React.useRef<ReCAPTCHA>(null);
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
   const { toast } = useToast();
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!recaptchaSiteKey) {
+      toast({
+        title: "reCAPTCHA missing",
+        description: "Set NEXT_PUBLIC_RECAPTCHA_SITE_KEY in your environment.",
+        className: cn(
+          "top-0 w-full flex justify-center fixed md:max-w-7xl md:top-4 md:right-4"
+        ),
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!captchaToken) {
+      toast({
+        title: "Verify first",
+        description: "Please complete reCAPTCHA before sending.",
+        className: cn(
+          "top-0 w-full flex justify-center fixed md:max-w-7xl md:top-4 md:right-4"
+        ),
+        variant: "destructive",
+      });
+      return;
+    }
+
     setLoading(true);
     try {
-      const res = await fetch("/api/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          fullName,
-          email,
-          message,
-        }),
+      await addDoc(collection(db, "contactMessages"), {
+        fullName,
+        email,
+        message,
+        captchaToken,
+        createdAt: serverTimestamp(),
       });
-      const data = await res.json();
-      if (data.error) throw new Error(data.error);
+
       toast({
         title: "Thank you!",
         description: "I'll get back to you as soon as possible.",
@@ -45,6 +71,8 @@ const ContactForm = () => {
       setFullName("");
       setEmail("");
       setMessage("");
+      setCaptchaToken(null);
+      recaptchaRef.current?.reset();
       const timer = setTimeout(() => {
         router.push("/");
         clearTimeout(timer);
@@ -100,8 +128,18 @@ const ContactForm = () => {
           I&apos;ll never share your data with anyone else. Pinky promise!
         </p>
       </div>
+      {recaptchaSiteKey && (
+        <div className="mb-4 flex justify-center">
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey={recaptchaSiteKey}
+            onChange={(token) => setCaptchaToken(token)}
+            onExpired={() => setCaptchaToken(null)}
+          />
+        </div>
+      )}
       <Button
-        disabled={loading}
+        disabled={loading || !captchaToken || !recaptchaSiteKey}
         className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
         type="submit"
       >

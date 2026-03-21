@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { addListener, launch, stop } from "devtools-detector";
 
-export const useDevToolsOpen = () => {
+const useDevToolsOpen = () => {
   const [isDevToolsOpen, setIsDevToolsOpen] = useState(false);
 
   useEffect(() => {
@@ -19,3 +19,6 @@ export const useDevToolsOpen = () => {
   }, []);
   return { isDevToolsOpen };
 };
+
+export default useDevToolsOpen;
+export { useDevToolsOpen };
