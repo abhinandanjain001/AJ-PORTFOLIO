@@ -361,12 +361,40 @@ const projects: Project[] = [
     },
   },
   {
+    id: "sde-preparation-sheet",
+    category: "Interview Prep",
+    title: "SDE Preparation Sheet 📘",
+    src: "/assets/projects-screenshots/sde-preparation-sheet/1.png",
+    screenshots: [
+      "/assets/projects-screenshots/sde-preparation-sheet/1.png",
+      "/assets/projects-screenshots/sde-preparation-sheet/2.png",
+      "/assets/projects-screenshots/sde-preparation-sheet/3.png"
+    ],
+    live: "https://sde-perpation-sheet.vercel.app/",
+    github: "https://sde-perpation-sheet.vercel.app/",
+    skills: {
+      frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.tailwind],
+      backend: [],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono">
+            Curated SDE preparation sheet for coding interview practice and revision.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <SlideShow images={[this.src]} />
+        </div>
+      );
+    },
+  },
+  {
     id: "ai-wedding",
     category: "Full Stack",
     title: "AI-Powered Wedding Management 💍",
     src: "/assets/projects-screenshots/ai-wedding/1.png",
     screenshots: ["/assets/projects-screenshots/ai-wedding/1.png"],
-    live: "https://github.com/abhinandanjain001",
+    live: "https://weddingsite-fbf1.vercel.app/",
     github: "https://github.com/abhinandanjain001",
     skills: {
       frontend: [PROJECT_SKILLS.react],

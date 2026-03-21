@@ -33,15 +33,26 @@ const PROJECTS = [
   },
   {
     id: 3,
+    name: "SDE Preparation Sheet 📘",
+    description: `Curated SDE preparation sheet for coding interview practice and revision.`,
+    link: "https://sde-perpation-sheet.vercel.app/",
+    images: [
+      "/assets/projects-screenshots/sde-preparation-sheet/1.png",
+      "/assets/projects-screenshots/sde-preparation-sheet/2.png",
+      "/assets/projects-screenshots/sde-preparation-sheet/3.png"
+    ],
+  },
+  {
+    id: 4,
     name: "AI-Powered Wedding Management 💍",
     description: `React + Node.js + MongoDB platform with vendor booking, budgeting, and AR/VR venue simulations.`,
-    link: "https://github.com/abhinandanjain001",
+    link: "https://weddingsite-fbf1.vercel.app/",
     images: [
       "/assets/projects-screenshots/ai-wedding/1.png"
     ],
   },
   {
-    id: 4,
+    id: 5,
     name: "Virtual 3D Store 🛍️",
     description: `AI-based immersive virtual reality store experience built for modern retail.`,
     link: "https://retail-vision-guide.lovable.app",
@@ -53,7 +64,7 @@ const PROJECTS = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     name: "Jarvis AI 🤖",
     description: `An AI assistant that automates everyday tasks and interacts via voice commands.`,
     link: "https://github.com/abhinandanjain001/jarvis-ai",
@@ -62,7 +73,7 @@ const PROJECTS = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     name: "Education Guru 🎓",
     description: `Smart education platform featuring AI-powered tutoring and resources.`,
     link: "https://educationguru.vercel.app/",
@@ -72,7 +83,7 @@ const PROJECTS = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     name: "Servizio 24/7 🚗",
     description: `On-demand household services platform with real-time booking flow and Firebase backend.`,
     link: "https://github.com/abhinandanjain001",
@@ -81,7 +92,7 @@ const PROJECTS = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     name: "Weather App 🌦️",
     description: `Responsive web app that forecasts weather up to 5 days using live API data.`,
     link: "https://today-weather-io.vercel.app/",
