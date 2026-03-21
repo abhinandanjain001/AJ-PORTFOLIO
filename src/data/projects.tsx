@@ -446,8 +446,8 @@ const projects: Project[] = [
       "/assets/projects-screenshots/disaster-management/4.png",
       "/assets/projects-screenshots/disaster-management/5.png"
     ],
-    live: "https://github.com/abhinandanjain001",
-    github: "https://github.com/abhinandanjain001",
+    live: "https://edu-safe-360.vercel.app/",
+    github: "https://github.com/abhinandanjain001/AJ-PORTFOLIO",
     skills: {
       frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.spline],
       backend: [PROJECT_SKILLS.node],
