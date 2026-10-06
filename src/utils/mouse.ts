@@ -24,3 +24,4 @@ export const useMousePosition = (): MousePosition => {
 	}, []);
 
 	return mousePosition;
+};

@@ -39,7 +39,7 @@ import { TbBrandFramerMotion } from "react-icons/tb";
 import css from "styled-jsx/css";
 const BASE_PATH = "/assets/projects-screenshots";
 
-const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
+const ProjectsLinks = ({ live, repo, repoPrivate }: { live: string; repo?: string; repoPrivate?: boolean }) => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-start gap-3 my-3 mb-8">
       <Link
@@ -61,7 +61,7 @@ const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
           href={repo}
         >
           <Button variant={"default"} size={"sm"}>
-            Github
+            {repoPrivate ? "GitHub (private)" : "GitHub"}
             <ArrowUpRight className="ml-3 w-5 h-5" />
           </Button>
         </Link>
@@ -213,6 +213,12 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: <SiThreedotjs />,
   },
+  three: {
+    title: "Three.js",
+    bg: "black",
+    fg: "white",
+    icon: <SiThreedotjs />,
+  },
   gsap: {
     title: "GSAP",
     bg: "black",
@@ -297,14 +303,109 @@ export type Project = {
   id: string;
   category: string;
   title: string;
+  description?: string;
   src: string;
   screenshots: string[];
   skills: { frontend: Skill[]; backend: Skill[] };
   content: React.ReactNode | any;
   github?: string;
+  githubPrivate?: boolean;
   live: string;
 };
 const projects: Project[] = [
+  {
+    id: "astrois",
+    category: "AI Application",
+    title: "Astrois - AI Astrology",
+    description: "AI-powered astrology with personal birth charts, kundli calculations, daily guidance, and conversational readings.",
+    src: `${BASE_PATH}/astrois/1.jpg`,
+    screenshots: [`${BASE_PATH}/astrois/1.jpg`],
+    live: "https://astroais.app/",
+    github: "https://github.com/abhinandanjain001/astroais.app",
+    skills: {
+      frontend: [PROJECT_SKILLS.next, PROJECT_SKILLS.react, PROJECT_SKILLS.tailwind, PROJECT_SKILLS.ts],
+      backend: [PROJECT_SKILLS.node, PROJECT_SKILLS.firebase],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono">{this.description}</TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <SlideShow images={this.screenshots} />
+        </div>
+      );
+    },
+  },
+  {
+    id: "bharat-cultural-journey",
+    category: "Interactive Experience",
+    title: "Bharat - Indian Culture",
+    description: "A scroll-driven journey through India's heritage, from the Taj Mahal and Dal Lake to the Himalayas, with Three.js scenes and GSAP animation.",
+    src: `${BASE_PATH}/bharat-cultural-journey/1.jpg`,
+    screenshots: [`${BASE_PATH}/bharat-cultural-journey/1.jpg`],
+    live: "https://bharat-cultural-journey.vercel.app/",
+    github: "https://github.com/abhinandanjain001/bharat-cultural-journey",
+    githubPrivate: true,
+    skills: {
+      frontend: [PROJECT_SKILLS.html, PROJECT_SKILLS.css, PROJECT_SKILLS.js, PROJECT_SKILLS.three, PROJECT_SKILLS.gsap],
+      backend: [],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono">{this.description}</TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} repoPrivate={this.githubPrivate} />
+          <SlideShow images={this.screenshots} />
+        </div>
+      );
+    },
+  },
+  {
+    id: "bugatti",
+    category: "Brand Concept",
+    title: "Bugatti - Tourbillon Experience",
+    description: "A luxury automotive concept with an interactive model showcase, exterior color selection, craftsmanship stories, and a private-viewing enquiry flow.",
+    src: `${BASE_PATH}/bugatti/1.jpg`,
+    screenshots: [`${BASE_PATH}/bugatti/1.jpg`],
+    live: "https://premium-bugatti-website.vercel.app/",
+    github: "https://github.com/abhinandanjain001/Premium-bugatti-website",
+    skills: {
+      frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.vite, PROJECT_SKILLS.tailwind, PROJECT_SKILLS.ts],
+      backend: [],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono">{this.description}</TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <SlideShow images={this.screenshots} />
+        </div>
+      );
+    },
+  },
+  {
+    id: "coke",
+    category: "Brand Concept",
+    title: "Coke - Premium Landing Page",
+    description: "A Coca-Cola concept landing page with vivid product photography, an interactive drink lineup, pack selection, and responsive brand storytelling.",
+    src: `${BASE_PATH}/coke/1.jpg`,
+    screenshots: [`${BASE_PATH}/coke/1.jpg`],
+    live: "https://premium-coke-landing-page.vercel.app/",
+    github: "https://github.com/abhinandanjain001/Premium-coke-landing-page",
+    skills: {
+      frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.vite, PROJECT_SKILLS.tailwind, PROJECT_SKILLS.ts],
+      backend: [],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono">{this.description}</TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <SlideShow images={this.screenshots} />
+        </div>
+      );
+    },
+  },
   {
     id: "disaster-management",
     category: "AR/VR",

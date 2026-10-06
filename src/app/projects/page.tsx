@@ -2,6 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import projects from "@/data/projects";
+import { ArrowUpRight, Github } from "lucide-react";
 // @ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css/core";
@@ -9,6 +11,15 @@ import "@splidejs/react-splide/css/core";
 import "@splidejs/react-splide/css";
 
 const PROJECTS = [
+  ...projects.filter((project) => project.description).map((project) => ({
+    id: project.id,
+    name: project.title,
+    description: project.description,
+    link: project.live,
+    github: project.github,
+    githubPrivate: project.githubPrivate,
+    images: project.screenshots,
+  })),
   {
     id: 1,
     name: "Disaster Management (EduSafe 360) 🌐",
@@ -104,12 +115,12 @@ const PROJECTS = [
 function Page() {
   return (
     <>
-      <div className="container mx-auto md:px-[50px] xl:px-[150px] text-zinc-300 h-full">
+      <div className="container mx-auto px-4 md:px-[50px] xl:px-[150px] text-zinc-300 h-full pb-16">
         <h1 className="text-4xl mt-[100px] mb-[50px]">Projects</h1>
-        <ul className="grid  md:grid-cols-2 lg:grid-cols-3 gap-10 place-content-around ">
+        <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 place-content-around">
           {PROJECTS.map((project) => (
             <li
-              className="w-[300px] h-[400px] border-[.5px] rounded-md border-zinc-600"
+              className="w-full min-w-0 min-h-[400px] flex flex-col border-[.5px] rounded-md border-zinc-600 overflow-hidden"
               key={project.id}
               style={{ backdropFilter: "blur(2px)" }}
             >
@@ -125,14 +136,14 @@ function Page() {
                     easing: "cubic-bezier(0.25, 1, 0.5, 1)",
                     arrows: false,
                   }}
-                  aria-label="My Favorite Images"
+                  aria-label={`${project.name} screenshots`}
                 >
                   {project.images.map((image) => (
                     <SplideSlide key={image}>
                       <Image
                         src={image}
-                        alt={`screenshot of "${project.name}`}
-                        className="w-[300px] h-[200px] rounded-md bg-zinc-900 "
+                        alt={`Screenshot of ${project.name}`}
+                        className="w-full h-[200px] object-contain rounded-md bg-zinc-900"
                         width={300}
                         height={400}
                         style={{ height: "200px" }}
@@ -141,11 +152,21 @@ function Page() {
                   ))}
                 </Splide>
               </div>
-              <div className="p-4 text-zinc-300">
+              <div className="p-4 text-zinc-300 flex flex-1 flex-col">
                 <h2 className="text-xl">{project.name}</h2>
-                <p className="mt-2 text-xs text-zinc-500">
+                <p className="mt-2 text-xs text-zinc-400">
                   {project.description}
                 </p>
+                <div className="mt-auto pt-4 flex flex-wrap gap-4 text-sm">
+                  <Link href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 min-h-11 hover:underline">
+                    Visit Website <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                  {"github" in project && project.github && (
+                    <Link href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 min-h-11 hover:underline">
+                      <Github className="h-4 w-4" aria-hidden="true" /> {"githubPrivate" in project && project.githubPrivate ? "GitHub (private)" : "GitHub"}
+                    </Link>
+                  )}
+                </div>
               </div>
             </li>
           ))}
