@@ -35,11 +35,11 @@ const PROJECTS = [
   },
   {
     id: 2,
-    name: "AI Blog Companion 🧠",
-    description: `An AI-powered blog generator that writes posts and creates matching images automatically. Streamlit + OpenAI API tool for SEO blog generation with prompt control and export support.`,
-    link: "https://ai-blog-companion-bxvdnpucqsknnmfoxdrku5.streamlit.app/",
+    name: "Inkwell - Professional Blog Writer",
+    description: `An AI-powered blog writer with customizable briefs, target keywords, word counts, editorial images, and Markdown export, powered by Cloudflare Workers AI.`,
+    link: "https://inkwell-blog-writer.vercel.app/",
     images: [
-      "/assets/projects-screenshots/ai-blog-companion/1.png"
+      "/assets/projects-screenshots/inkwell/1.jpg"
     ],
   },
   {

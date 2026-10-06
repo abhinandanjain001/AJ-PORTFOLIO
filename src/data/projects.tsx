@@ -437,23 +437,23 @@ const projects: Project[] = [
     },
   },
   {
-    id: "ai-blog-companion",
+    id: "inkwell",
     category: "AI Tool",
-    title: "AI Blog Companion 🧠",
-    src: "/assets/projects-screenshots/ai-blog-companion/1.png",
-    screenshots: ["/assets/projects-screenshots/ai-blog-companion/1.png"],
-    live: "https://ai-blog-companion-bxvdnpucqsknnmfoxdrku5.streamlit.app/",
-    github: "https://ai-blog-companion-bxvdnpucqsknnmfoxdrku5.streamlit.app/",
+    title: "Inkwell - Professional Blog Writer",
+    src: "/assets/projects-screenshots/inkwell/1.jpg",
+    screenshots: ["/assets/projects-screenshots/inkwell/1.jpg"],
+    live: "https://inkwell-blog-writer.vercel.app/",
+    github: "",
     skills: {
-      frontend: [PROJECT_SKILLS.python],
-      backend: [PROJECT_SKILLS.openai],
+      frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.ts],
+      backend: [],
     },
     get content() {
       return (
         <div>
           <TypographyP className="font-mono">
-            An AI-powered blog generator that writes posts and creates matching images automatically.
-            Streamlit + OpenAI API tool for SEO blog generation with prompt control and export support.
+            An AI-powered blog writer with customizable briefs, target keywords,
+            word counts, editorial images, and Markdown export, powered by Cloudflare Workers AI.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
           <SlideShow images={[this.src]} />
