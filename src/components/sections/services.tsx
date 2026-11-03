@@ -55,7 +55,7 @@ const ServicesSection = () => (
       {services.map(({ title, price, icon: Icon, description, detail }) => (
         <article
           key={title}
-          className="flex min-h-[310px] flex-col rounded-2xl border border-black/10 bg-white/75 p-6 shadow-sm backdrop-blur-sm transition duration-200 hover:-translate-y-1 hover:border-black/20 dark:border-white/15 dark:bg-black/55 dark:hover:border-white/30"
+          className="flex min-h-[310px] flex-col rounded-2xl border border-black/10 bg-white/95 p-6 shadow-sm backdrop-blur-sm transition duration-200 hover:-translate-y-1 hover:border-black/20 dark:border-white/15 dark:bg-black/90 dark:hover:border-white/30"
         >
           <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-black/10 bg-white/80 text-slate-900 dark:border-white/15 dark:bg-white/10 dark:text-white" aria-hidden="true">
             <Icon size={21} strokeWidth={1.7} />
