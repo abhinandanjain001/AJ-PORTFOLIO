@@ -15,24 +15,58 @@ import SmoothScroll from "../smooth-scroll";
 import projects, { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
+const projectGroups = [
+  {
+    id: "landing",
+    title: "Landing pages & brand websites",
+    description: "Focused web experiences for products, brands and campaigns."
+  },
+  {
+    id: "product",
+    title: "End-to-end digital products",
+    description: "Web apps and tools that bring the interface, features and workflows together."
+  },
+  {
+    id: "immersive",
+    title: "3D & interactive websites",
+    description: "Immersive showcases and interactive experiences built to invite exploration."
+  }
+] as const;
+
 const ProjectsSection = () => {
   return (
     <section id="projects" className="max-w-7xl mx-auto pb-16">
       <Link href={"#projects"}>
         <h2
           className={cn(
-            "bg-clip-text text-4xl text-center text-transparent md:text-7xl pt-16",
+            "bg-clip-text text-4xl text-center text-transparent md:text-7xl pt-16 mb-5",
             "bg-gradient-to-b from-black/80 to-black/50",
-            "dark:bg-gradient-to-b dark:from-white/80 dark:to-white/20 dark:bg-opacity-50 mb-32"
+            "dark:bg-gradient-to-b dark:from-white/80 dark:to-white/20 dark:bg-opacity-50"
           )}
         >
-          Projects
+          Selected projects
         </h2>
       </Link>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {projects.map((project, index) => (
-          <Modall key={project.src} project={project} />
-        ))}
+      <p className="mx-auto mb-14 max-w-2xl px-4 text-center text-sm leading-relaxed text-neutral-600 dark:text-neutral-300 sm:text-base">
+        A selection of work across the kinds of websites and products I build.
+      </p>
+      <div className="space-y-16 px-4">
+        {projectGroups.map((group) => {
+          const groupProjects = projects.filter((project) => project.serviceCategory === group.id);
+          return (
+            <div key={group.id}>
+              <div className="mb-6 border-b border-black/10 pb-4 dark:border-white/15">
+                <h3 className="text-2xl font-semibold text-slate-900 dark:text-white sm:text-3xl">{group.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">{group.description}</p>
+              </div>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {groupProjects.map((project) => (
+                  <Modall key={project.id} project={project} />
+                ))}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

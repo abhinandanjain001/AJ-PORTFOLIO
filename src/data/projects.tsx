@@ -302,6 +302,7 @@ const PROJECT_SKILLS = {
 export type Project = {
   id: string;
   category: string;
+  serviceCategory: "landing" | "product" | "immersive";
   title: string;
   description?: string;
   src: string;
@@ -316,6 +317,7 @@ const projects: Project[] = [
   {
     id: "astrois",
     category: "AI Application",
+    serviceCategory: "product",
     title: "Astrois - AI Astrology",
     description: "AI-powered astrology with personal birth charts, kundli calculations, daily guidance, and conversational readings.",
     src: `${BASE_PATH}/astrois/1.jpg`,
@@ -339,6 +341,7 @@ const projects: Project[] = [
   {
     id: "bharat-cultural-journey",
     category: "Interactive Experience",
+    serviceCategory: "immersive",
     title: "Bharat - Indian Culture",
     description: "A scroll-driven journey through India's heritage, from the Taj Mahal and Dal Lake to the Himalayas, with Three.js scenes and GSAP animation.",
     src: `${BASE_PATH}/bharat-cultural-journey/1.jpg`,
@@ -363,6 +366,7 @@ const projects: Project[] = [
   {
     id: "bugatti",
     category: "Brand Concept",
+    serviceCategory: "landing",
     title: "Bugatti - Tourbillon Experience",
     description: "A luxury automotive concept with an interactive model showcase, exterior color selection, craftsmanship stories, and a private-viewing enquiry flow.",
     src: `${BASE_PATH}/bugatti/1.jpg`,
@@ -386,6 +390,7 @@ const projects: Project[] = [
   {
     id: "coke",
     category: "Brand Concept",
+    serviceCategory: "landing",
     title: "Coke - Premium Landing Page",
     description: "A Coca-Cola concept landing page with vivid product photography, an interactive drink lineup, pack selection, and responsive brand storytelling.",
     src: `${BASE_PATH}/coke/1.jpg`,
@@ -409,6 +414,7 @@ const projects: Project[] = [
   {
     id: "disaster-management",
     category: "AR/VR",
+    serviceCategory: "product",
     title: "Disaster Management (EduSafe 360) 🌐",
     src: "/assets/projects-screenshots/disaster-management/1.png",
     screenshots: [
@@ -439,6 +445,7 @@ const projects: Project[] = [
   {
     id: "inkwell",
     category: "AI Tool",
+    serviceCategory: "product",
     title: "Inkwell - Professional Blog Writer",
     src: "/assets/projects-screenshots/inkwell/1.jpg",
     screenshots: ["/assets/projects-screenshots/inkwell/1.jpg"],
@@ -464,6 +471,7 @@ const projects: Project[] = [
   {
     id: "sde-preparation-sheet",
     category: "Interview Prep",
+    serviceCategory: "product",
     title: "SDE Preparation Sheet 📘",
     src: "/assets/projects-screenshots/sde-preparation-sheet/1.png",
     screenshots: [
@@ -492,6 +500,7 @@ const projects: Project[] = [
   {
     id: "ai-wedding",
     category: "Full Stack",
+    serviceCategory: "product",
     title: "AI-Powered Wedding Management 💍",
     src: "/assets/projects-screenshots/ai-wedding/1.png",
     screenshots: ["/assets/projects-screenshots/ai-wedding/1.png"],
@@ -516,6 +525,7 @@ const projects: Project[] = [
   {
     id: "virtual-3d-store",
     category: "Virtual Reality",
+    serviceCategory: "immersive",
     title: "Virtual 3D Store 🛍️",
     src: "/assets/projects-screenshots/virtual-3d-store/1.png",
     screenshots: [
@@ -545,6 +555,7 @@ const projects: Project[] = [
   {
     id: "jarvis-ai",
     category: "AI Assistant",
+    serviceCategory: "product",
     title: "Jarvis AI 🤖",
     src: "/assets/projects-screenshots/jarvis-ai/1.png",
     screenshots: ["/assets/projects-screenshots/jarvis-ai/1.png"],
@@ -569,6 +580,7 @@ const projects: Project[] = [
   {
     id: "education-guru",
     category: "Education Platform",
+    serviceCategory: "product",
     title: "Education Guru 🎓",
     src: "/assets/projects-screenshots/education-guru/1.png",
     screenshots: [
@@ -596,6 +608,7 @@ const projects: Project[] = [
   {
     id: "servizio",
     category: "Full Stack",
+    serviceCategory: "product",
     title: "Servizio 24/7 🚗",
     src: "/assets/projects-screenshots/servizio/1.avif",
     screenshots: ["/assets/projects-screenshots/servizio/1.avif"],
@@ -620,6 +633,7 @@ const projects: Project[] = [
   {
     id: "weather-app",
     category: "Web App",
+    serviceCategory: "product",
     title: "Weather App 🌦️",
     src: "/assets/projects-screenshots/weather-app/1.png",
     screenshots: ["/assets/projects-screenshots/weather-app/1.png"],

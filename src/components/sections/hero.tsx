@@ -72,11 +72,11 @@ const HeroSection = () => {
                 <BlurIn delay={1.2}>
                   <p
                     className={cn(
-                      "md:self-start md:mt-4 font-thin text-md text-slate-500 dark:text-zinc-400 ml-3",
-                      "cursor-default font-display sm:text-xl md:text-xl whitespace-nowrap bg-clip-text "
+                      "md:self-start md:mt-4 max-w-sm text-center md:text-left font-thin text-md text-slate-500 dark:text-zinc-400 ml-3",
+                      "cursor-default font-display sm:text-xl md:text-xl whitespace-normal leading-relaxed bg-clip-text "
                     )}
                   >
-                    AI Enthusiast
+                    Freelance web developer &amp; product builder
                   </p>
                 </BlurIn>
               </div>
@@ -96,6 +96,11 @@ const HeroSection = () => {
                   </BoxReveal>
                 </Link>
                 <div className="md:self-start flex gap-3">
+                  <Link href={"#services"}>
+                    <Button variant={"outline"} className="min-h-11">
+                      Services
+                    </Button>
+                  </Link>
                   <Tooltip delayDuration={300}>
                     <TooltipTrigger asChild>
                       <Link href={"#contact"}>
