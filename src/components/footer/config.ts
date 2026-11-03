@@ -4,6 +4,10 @@ export const footer = [
 		href: "#projects",
 	},
 	{
+		title: "Services",
+		href: "#services",
+	},
+	{
 		title: "Contact",
 		href: "#contact",
 	},

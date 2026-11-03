@@ -1,9 +1,9 @@
 const config = {
-  title: "Abhinandan Jain | AI Enthusiast",
+  title: "Abhinandan Jain | Web Developer & Product Builder",
   description: {
-    long: "I create AI-driven web products and immersive experiences that solve real problems. From full-stack apps and automation tools to data-backed analytics projects, I focus on clean UX, scalable systems, and measurable impact.",
+    long: "I build thoughtful websites and digital products for people and businesses. Explore freelance services for landing pages, end-to-end products, greeting mini-sites, and immersive 3D experiences.",
     short:
-      "Discover the portfolio of Abhinandan Jain, a B.Tech CSE student, Developer, Leader, and AI Enthusiast.",
+      "Freelance landing pages, end-to-end web products, greeting mini-sites, and immersive 3D websites by Abhinandan Jain.",
   },
   keywords: [
     "Abhinandan",
@@ -14,6 +14,10 @@ const config = {
     "Projects",
     "Resume",
     "AI Enthusiast",
+    "freelance web developer",
+    "landing pages",
+    "end-to-end product development",
+    "3D websites",
     "creative technologist",
     "web development",
     "interactive websites",
@@ -24,7 +28,7 @@ const config = {
   ],
   author: "Abhinandan Jain",
   email: "abhinandanjain.cse27@jecrc.ac.in",
-  site: "https://abhinandanjain.com",
+  site: "https://aj-portfolio.abhinandanjian.me",
 
   get ogImg() {
     return this.site + "/assets/seo/og-image.png";
